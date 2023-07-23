@@ -76,5 +76,5 @@ msg.set_content("Please find attached the FENS weekly update")
 msg.add_attachment(open('FENS_Output.txt', "r").read(), filename="FENS_Output.txt")
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
-s.login('ihiteshpradhan@gmail.com', 'nacgchovphdkoujl')
+s.login('ihiteshpradhan@gmail.com', SOME_SECRET)
 s.send_message(msg)
