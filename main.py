@@ -7,7 +7,7 @@ import datetime
 
 with open("FENS_Output.txt",'wt') as f :
     urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
-        "https://www.fens.org/careers/job-market/page/3","https://www.fens.org/careers/job-market/page/4"]
+        "https://www.fens.org/careers/job-market/page/3"]
 
     # urls=["https://www.fens.org/careers/job-market"]
     for url in urls:
@@ -69,7 +69,7 @@ current_time = datetime.datetime.now()
 
 msg = EmailMessage()
 msg["From"] = 'ihiteshpradhan@gmail.com'
-msg["Subject"] = "FENS"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)
+msg["Subject"] = "FENS Weekly Update"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)
 #msg["To"] = "fens_scrappingtest@googlegroups.com"
 msg["To"] = "htshpradhan5@gmail.com"
 msg.set_content("Please find attached the FENS weekly update")
