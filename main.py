@@ -6,10 +6,10 @@ from bs4 import BeautifulSoup
 import datetime
 
 with open("FENS_Output.txt",'wt') as f :
-    urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
-        "https://www.fens.org/careers/job-market/page/3"]
+    # urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
+    #     "https://www.fens.org/careers/job-market/page/3"]
 
-    # urls=["https://www.fens.org/careers/job-market"]
+    urls=["https://www.fens.org/careers/job-market"]
     for url in urls:
         # Send a request to the URL
         response = requests.get(url)
