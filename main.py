@@ -4,11 +4,15 @@ import smtplib
 from email.message import EmailMessage
 from bs4 import BeautifulSoup
 import datetime
+import os
 
 # using now() to get current time
 current_time = datetime.datetime.now()
 
-with open("FENS_Output.txt",'wt') as f :
+#Filename
+file_name="FENS_"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)+".txt"
+
+with open(file_name,'wt') as f :
     # urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
     #     "https://www.fens.org/careers/job-market/page/3"]
 
@@ -73,8 +77,10 @@ msg["Subject"] = "FENS Weekly Update"+"_"+ str(current_time.day) + "_" + str(cur
 #msg["To"] = "fens_scrappingtest@googlegroups.com"
 msg["To"] = "htshpradhan5@gmail.com"
 msg.set_content("Please find attached the FENS weekly update")
-msg.add_attachment(open("FENS_Output.txt", "r").read(), filename="FENS_Output.txt")
+msg.add_attachment(open(file_name, "r").read(), filename=file_name)
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
 s.login('ihiteshpradhan@gmail.com', "nacgchovphdkoujl")
 s.send_message(msg)
+
+os.rename(file_name,"FENS_Output.txt")
