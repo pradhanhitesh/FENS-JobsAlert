@@ -10,7 +10,7 @@ import os
 current_time = datetime.datetime.now()
 
 #Filename
-file_name="FENS_"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)+".txt"
+file_name="FENS"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)+".txt"
 
 with open(file_name,'wt') as f :
     # urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
