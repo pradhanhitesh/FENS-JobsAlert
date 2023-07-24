@@ -8,15 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # - name: commit files
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git rm FENS_Ouptput.txt
-      #     git commit -m "Deleted old outpt"
-      #     git push
-      
-
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
@@ -32,13 +23,7 @@ jobs:
           
       - name: execute py script # run main.py
         run: python main.py
-          
-      - name: Delete the file
-        run: |
-          git rm FENS_Ouptput.txt
-          git commit -m "Deleted old outpt"
-          git push
-               
+
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
