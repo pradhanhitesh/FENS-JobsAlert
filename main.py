@@ -82,13 +82,15 @@ with open(file_name,'wt') as f :
                 title=str(title_tags).split('>')[1].split('<')[0]
                 print("Title: ",title,file=f)
                 keywords=['<p>Job ID:','<p><b>Position:','<p><b>Deadline:',
-                        '<p><b>Employment Start Date:','<p><b>Country:','<p><b>Institution:','URL:']
+                        '<p><b>Employment Start Date:','<p><b>Country:','<p><b>Institution:','URL:',
+                        "<p><b>Department:"]
                 data=[]
                 for j in range(len(list(soup.find_all('p')))):
                     for keys in keywords:
                         if str(soup.find_all('p')[j]).find(keys) != -1:
                             #print(soup.find_all('p')[j])
                             print(re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])),file=f)
+                            print(re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
                             pdf.set_text_color(0,0,0) 
                             pdf.write(4,re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
                             pdf.ln(h=5)
