@@ -5,6 +5,7 @@ from email.message import EmailMessage
 from bs4 import BeautifulSoup
 import datetime
 import os
+from fpdf import FPDF
 
 # using now() to get current time
 current_time = datetime.datetime.now()
@@ -12,11 +13,30 @@ current_time = datetime.datetime.now()
 #Filename
 file_name="FENS"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)+".txt"
 
-with open(file_name,'wt') as f :
-    urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
-        "https://www.fens.org/careers/job-market/page/3"]
+#Convert txt to PDF
+pdf = FPDF()
 
-    # urls=["https://www.fens.org/careers/job-market"]
+# Add a page
+pdf.add_page()
+  
+# set style and size of font
+# that you want in the pdf
+pdf.set_font("Arial", size = 15)
+
+#Setting credentials
+pdf.set_text_color(0,0,0)  
+txt_1="FENS Job Market Weekly Feed"
+txt_2="Timestamp:"+str(current_time)
+pdf.cell(200, 10, txt = txt_1,ln = 1, align = 'C')
+pdf.cell(200, 10, txt = txt_2,ln = 2, align = 'C')
+pdf.ln(h=6)
+
+
+with open(file_name,'wt') as f :
+    # #urls=["https://www.fens.org/careers/job-market","https://www.fens.org/careers/job-market/page/2",
+    #     "https://www.fens.org/careers/job-market/page/3"]
+
+    urls=["https://www.fens.org/careers/job-market"]
     for url in urls:
         # Send a request to the URL
         response = requests.get(url)
@@ -46,6 +66,9 @@ with open(file_name,'wt') as f :
             if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                 url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
                 print(url_job,file=f)
+                pdf.set_text_color(0,0,255) 
+                pdf.write(4,url_job)
+                pdf.ln(h=5)
                 
                 # Send a request to the URL
                 response = requests.get(url_job)
@@ -66,18 +89,27 @@ with open(file_name,'wt') as f :
                         if str(soup.find_all('p')[j]).find(keys) != -1:
                             #print(soup.find_all('p')[j])
                             print(re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])),file=f)
+                            pdf.set_text_color(0,0,0) 
+                            pdf.write(4,re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
+                            pdf.ln(h=5)
                 
                 print('\n',file=f)
+                pdf.ln(h=8)
                 print('URL:',url_job,' DONE!')
 
+pdf.output("FENS_Weekly.pdf")
 
 msg = EmailMessage()
 msg["From"] = 'ihiteshpradhan@gmail.com'
-msg["Subject"] = "FENS Weekly Update"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)
+msg["Subject"] = "FENS Weekly Update"
 #msg["To"] = "fens_scrappingtest@googlegroups.com"
 msg["To"] = "htshpradhan5@gmail.com"
 msg.set_content("Please find attached the FENS weekly update")
-msg.add_attachment(open(file_name, "r").read(), filename=file_name)
+# msg.add_attachment(open("Test.pdf").read(), filename="Test.pdf")
+
+with open('FENS_Weekly.pdf', 'rb') as content_file:
+    content = content_file.read()
+    msg.add_attachment(content, maintype='application', subtype='pdf', filename='FENS_Weekly.pdf')
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
 s.login('ihiteshpradhan@gmail.com', "nacgchovphdkoujl")

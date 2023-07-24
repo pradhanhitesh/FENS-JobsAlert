@@ -20,6 +20,7 @@ jobs:
         run: |
           pip install bs4
           pip install requests
+          pip install fpdf
           
       - name: execute py script # run main.py
         run: python main.py
