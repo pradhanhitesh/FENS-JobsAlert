@@ -8,6 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      # - name: commit files
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git rm FENS_Ouptput.txt
+      #     git commit -m "Deleted old outpt"
+      #     git push
+      
+
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
@@ -28,10 +37,9 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git rm FENS_Ouptput.txt
-          git commit -m "Deleted old outpt"
-          git push
-          
+          # git rm FENS_Ouptput.txt
+          # git commit -m "Deleted old outpt"
+          # git push       
           git add FENS_Output.txt
           git commit -m "Added generated output.txt"
           git push
