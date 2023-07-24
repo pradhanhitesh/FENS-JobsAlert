@@ -21,19 +21,18 @@ jobs:
         run: |
           pip install bs4
           pip install requests
+          pip install fpdf
           
       - name: execute py script # run main.py
         run: python main.py
-          
+
       - name: commit files
         run: |
+          git pull
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git rm FENS_Ouptput.txt
-          git commit -m "Deleted old outpt"
-          git push
-          
+          git config --local user.name "GitHub Action"  
+          git add FENS_Weekly.pdf    
           git add FENS_Output.txt
           git commit -m "Added generated output.txt"
           git push
-          
+        
