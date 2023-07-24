@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # - name: commit files
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git rm FENS_Ouptput.txt
-      #     git commit -m "Deleted old outpt"
-      #     git push
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git rm FENS_Ouptput.txt
+          git commit -m "Deleted old outpt"
+          git push
       
 
       - name: checkout repo content
