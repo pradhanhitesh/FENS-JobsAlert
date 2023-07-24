@@ -28,7 +28,8 @@ jobs:
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"      
+          git config --local user.name "GitHub Action"  
+          git add FENS_Weekly.pdf    
           git add FENS_Output.txt
           git commit -m "Added generated output.txt"
           git push
