@@ -20,7 +20,7 @@ URL: https://phdcns.sissa.it/admission-procedure
 
 
 https://www.fens.org/careers/job-market/job/114356/
-Title:  PhD ìNeurodegeneration as Synaptopathyî - Federation of European Neuroscience Societies
+Title:  PhD ‚ÄúNeurodegeneration as Synaptopathy‚Äù - Federation of European Neuroscience Societies
 Job ID: 114356
 Position: Ph.D. Student
 Deadline: 30 September 2023
@@ -61,7 +61,7 @@ URL: https://www.unil.ch/fbm/fr/home.html
 
 
 https://www.fens.org/careers/job-market/job/114294/
-Title:  Student ñ Scientific project ñ Deep Brain Stimulation for Memory Enhancement - Federation of European Neuroscience Societies
+Title:  Student ‚Äì Scientific project ‚Äì Deep Brain Stimulation for Memory Enhancement - Federation of European Neuroscience Societies
 Job ID: 114294
 Position: Student BSc/MSc/PhD
 Deadline: 30 September 2023
@@ -93,7 +93,7 @@ URL: https://therebolalab.org/
 
 
 https://www.fens.org/careers/job-market/job/114220/
-Title:  PhD student position ìGating and Function of Heteromeric Glutamate Receptorsî - Federation of European Neuroscience Societies
+Title:  PhD student position ‚ÄúGating and Function of Heteromeric Glutamate Receptors‚Äù - Federation of European Neuroscience Societies
 Job ID: 114220
 Position: Ph.D. Student
 Deadline: 31 July 2023
@@ -119,7 +119,7 @@ Job ID: 114209
 Position: Ph.D. Student
 Deadline: 31 July 2023
 Country: Germany
-Institution: Julius-Maximilians-University of W¸rzburg
+Institution: Julius-Maximilians-University of W√ºrzburg
 URL: https://www.garvertlab.com
 
 
