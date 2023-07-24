@@ -102,8 +102,8 @@ pdf.output("FENS_Weekly.pdf")
 msg = EmailMessage()
 msg["From"] = 'ihiteshpradhan@gmail.com'
 msg["Subject"] = "FENS Weekly Update"
-#msg["To"] = "fens_scrappingtest@googlegroups.com"
-msg["To"] = "htshpradhan5@gmail.com"
+msg["To"] = "fens_scrappingtest@googlegroups.com"
+# msg["To"] = "htshpradhan5@gmail.com"
 msg.set_content("Please find attached the FENS weekly update")
 # msg.add_attachment(open("Test.pdf").read(), filename="Test.pdf")
 
