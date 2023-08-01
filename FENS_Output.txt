@@ -1,3 +1,14 @@
+https://www.fens.org/careers/job-market/job/114776/
+Title:  Post-doctoral position in the Unit of Neural Circuit Dynamics and Decision Making at the Institut Pasteur - Federation of European Neuroscience Societies
+Job ID: 114776
+Position: Post-doctoral Position
+Deadline: 1 December 2023
+Country: France
+Institution: Institut Pasteur
+Department: Department of Neuroscience
+URL: http://haisslab.org/
+
+
 https://www.fens.org/careers/job-market/job/114671/
 Title:  Fully funded PhD position - Federation of European Neuroscience Societies
 Job ID: 114671
@@ -213,17 +224,6 @@ Position: Professor
 Deadline: 20 August 2023
 Country: Switzerland
 Institution: The Faculty of Biology and Medicine (FBM) and the Lausanne University Hospital (CHUV)
-Department: 
-URL: https://www.unil.ch/fbm/fr/home.html
-
-
-https://www.fens.org/careers/job-market/job/114314/
-Title:  Tenure Track Assistant Professor in the field of remodeling of brain connectivity and function - Federation of European Neuroscience Societies
-Job ID: 114314
-Position: Professor
-Deadline: 20 September 2023
-Country: Switzerland
-Institution: The Faculty of Biology and Medicine (FBM)
 Department: 
 URL: https://www.unil.ch/fbm/fr/home.html
 
