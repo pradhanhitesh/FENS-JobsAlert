@@ -2,7 +2,7 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '26 7 * * 1' #At every 7 minute
+    - cron: '26 7 * * 1' #At 07:26 on Monday UTC which will be 1 PM~ in IST
 
 jobs:
   build:
