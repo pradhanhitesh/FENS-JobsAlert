@@ -30,6 +30,7 @@ txt_2="Timestamp: "+str(current_time)+" UTC"
 txt_3="Follow on LinkedIn for more! linkedin.com/in/pradhanhitesh"
 pdf.cell(200, 10, txt = txt_1,ln = 1, align = 'C')
 pdf.cell(200, 10, txt = txt_2,ln = 2, align = 'C')
+pdf.cell(200, 10, txt = txt_3,ln = 2, align = 'C')
 pdf.ln(h=6)
 
 
