@@ -1,4 +1,4 @@
-name: run main.py
+name: run main_manual.py
 
 on:
   workflow_dispatch:
@@ -21,6 +21,8 @@ jobs:
           pip install bs4
           pip install requests
           pip install fpdf
+          pip install yake
+          pip install python-docx
           
       - name: execute py script # run main.py
         run: python main.py
