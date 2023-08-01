@@ -27,6 +27,7 @@ pdf.set_font("Arial", size = 15)
 pdf.set_text_color(0,0,0)  
 txt_1="FENS Job Market Weekly Feed"
 txt_2="Timestamp: "+str(current_time)+" UTC"
+txt_3="Follow on LinkedIn for more! linkedin.com/in/pradhanhitesh"
 pdf.cell(200, 10, txt = txt_1,ln = 1, align = 'C')
 pdf.cell(200, 10, txt = txt_2,ln = 2, align = 'C')
 pdf.ln(h=6)
