@@ -144,10 +144,9 @@ with open(file_name,'wt') as f :
 pdf.output("FENS_Weekly.pdf")
 
 msg = EmailMessage()
-msg["From"] = 'ihiteshpradhan@gmail.com'
-msg["Subject"] = "FENS Weekly Update"
-# msg["To"] = "fens_weeklyfetch@googlegroups.com"
-msg["To"] = "htshpradhan5@gmail.com"
+msg["From"] = 'ihiteshpradhan@gmail.com' #Sender email ID
+msg["Subject"] = "FENS Weekly Update" 
+msg["To"] = "fens_weeklyfetch@googlegroups.com" #Google Group IDD
 msg.set_content("Please find attached the FENS weekly update")
 # msg.add_attachment(open("Test.pdf").read(), filename="Test.pdf")
 
@@ -156,7 +155,6 @@ with open('FENS_Weekly.pdf', 'rb') as content_file:
     msg.add_attachment(content, maintype='application', subtype='pdf', filename='FENS_Weekly.pdf')
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
-s.login('ihiteshpradhan@gmail.com', "nacgchovphdkoujl")
-s.send_message(msg)
+s.login(email_id, login_key) #Add your credentials
 
 os.rename(file_name,"FENS_Output.txt")
