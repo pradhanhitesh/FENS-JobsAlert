@@ -1,6 +1,7 @@
 ﻿# FENS-scrappers
 
 <b1> About the repository (Generated via ChatGPT) </b1>
+
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
 Looking to kickstart your dream career in the field of neuroscience and beyond? Look no further! Our GitHub repository is your golden ticket to landing that perfect job. We've harnessed the power of web scraping and automation to bring you the FENS PhD Jobs Market like never before.
