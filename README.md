@@ -1,6 +1,6 @@
 ﻿# FENS-scrappers
 
-<b1> About the repository (Generated via ChatGPT) </b1>
+<b> About the repository (Generated via ChatGPT) </b>
 
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
