@@ -13,4 +13,4 @@ Our repository is a game-changer, effortlessly gathering up-to-the-minute job in
 We've supercharged this repository with GitHub Actions, making it a breeze to stay in the loop. It automatically scrapes and compiles the latest job listings every single week, and with surgical precision, it sends these juicy updates straight to your email.
 
 📧 Sign Up, Sit Back, and Succeed
-All you need to do is sign up to receive our weekly job updates through Google Groups. The rest is pure magic, as our repository takes care of the rest. Stay ahead of the job market with minimal effort.
+All you need to do is sign up to receive our weekly job updates through Google Groups. The rest is pure magic, as our repository takes care of the rest. Stay ahead of the job market with minimal effort. Reach out on ihiteshpradhan@gmail.com for more information.
