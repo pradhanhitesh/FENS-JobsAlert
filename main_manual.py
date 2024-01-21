@@ -7,12 +7,10 @@ import datetime
 import os
 from fpdf import FPDF
 import yake
-# import docx
-# from docx.shared import Inches
-# from docx.enum.text import WD_ALIGN_PARAGRAPH
+import pytz
 
 # using now() to get current time
-current_time = datetime.datetime.now()
+current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
 
 #Filename
 file_name="FENS"+"_"+ str(current_time.day) + "_" + str(current_time.month) + "_" + str(current_time.year)+".txt"
@@ -32,7 +30,7 @@ pdf.set_font('DejaVu', '', 14)
 pdf.set_text_color(0,0,0)  
 txt_1="FENS Job Market Weekly Feed"
 txt_2="Timestamp: "+str(current_time)+" UTC"
-txt_3="Follow on LinkedIn for more! linkedin.com/in/pradhanhitesh"
+txt_3="Follow on LinkedIn for more! github.com/pradhanhitesh"
 pdf.cell(200, 10, txt = txt_1,ln = 1, align = 'C')
 pdf.cell(200, 10, txt = txt_2,ln = 2, align = 'C')
 pdf.cell(200, 10, txt = txt_3,ln = 2, align = 'C')
@@ -146,7 +144,7 @@ pdf.output("FENS_Weekly.pdf")
 msg = EmailMessage()
 msg["From"] = 'ihiteshpradhan@gmail.com' #Sender email ID
 msg["Subject"] = "FENS Weekly Update" 
-msg["To"] = "ihiteshpradhan@gmail.com" #Google Group IDD
+msg["To"] = "hiteshp@iisc.ac.in" #Google Group IDD
 msg.set_content("Please find attached the FENS weekly update")
 # msg.add_attachment(open("Test.pdf").read(), filename="Test.pdf")
 
@@ -155,6 +153,7 @@ with open('FENS_Weekly.pdf', 'rb') as content_file:
     msg.add_attachment(content, maintype='application', subtype='pdf', filename='FENS_Weekly.pdf')
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
-s.login(os.environ.get('EMAIL'), os.environ.get('LOGIN_KEY')) #Add your credentials
+s.login(os.environ.get('EMAIL'),os.environ.get('LOGIN_KEY')) #Add your credentials
+s.send_message(msg)
 
-os.rename(file_name,"FENS_Output.txt")
+# os.rename(file_name,"FENS_Output.txt")
