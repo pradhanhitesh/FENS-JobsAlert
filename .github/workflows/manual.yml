@@ -25,7 +25,10 @@ jobs:
           pip install python-docx
           
       - name: execute py script # run main.py
-        run: python main.py
+          env:
+            EMAIL: ${{ secrets.EMAIL }}
+            LOGIN_KEY: ${{ secrets.LOGIN_KEY }}
+          run: python main.py
 
       - name: commit files
         run: |
