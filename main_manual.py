@@ -142,9 +142,9 @@ with open(file_name,'wt') as f :
 pdf.output("FENS_Weekly.pdf")
 
 msg = EmailMessage()
-msg["From"] = 'ihiteshpradhan@gmail.com' #Sender email ID
+msg["From"] = '' #Sender email ID
 msg["Subject"] = "FENS Weekly Update" 
-msg["To"] = "hiteshp@iisc.ac.in" #Google Group IDD
+msg["To"] = "" #Google Group IDD
 msg.set_content("Please find attached the FENS weekly update")
 # msg.add_attachment(open("Test.pdf").read(), filename="Test.pdf")
 
