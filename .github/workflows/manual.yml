@@ -7,7 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
 
@@ -25,10 +24,10 @@ jobs:
           pip install python-docx
           
       - name: execute py script # run main.py
-          env:
-            EMAIL: ${{ secrets.EMAIL }}
-            LOGIN_KEY: ${{ secrets.LOGIN_KEY }}
-          run: python main.py
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          LOGIN_KEY: ${{ secrets.LOGIN_KEY }}
+        run: python main.py
 
       - name: commit files
         run: |
@@ -39,4 +38,3 @@ jobs:
           git add FENS_Output.txt
           git commit -m "Added generated output.txt"
           git push
-          
