@@ -7,9 +7,9 @@ import datetime
 import os
 from fpdf import FPDF
 import yake
-import docx
-from docx.shared import Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+# import docx
+# from docx.shared import Inches
+# from docx.enum.text import WD_ALIGN_PARAGRAPH
 
 # using now() to get current time
 current_time = datetime.datetime.now()
