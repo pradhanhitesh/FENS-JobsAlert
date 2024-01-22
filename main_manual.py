@@ -76,7 +76,7 @@ def _get_metadata(file_name):
 
             print(f"{_fetch_time()[1]} JOBS FETCHED!")
 
-            for k in range(len(job_links)):
+            for k in range(2):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                     url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
                     print(url_job,file=f)
@@ -145,7 +145,7 @@ msg.set_content(f"Dear subscriber, \nPlease find attached the FENS Weekly Update
 
 with open("FENS_"+date+".pdf", 'rb') as content_file:
     content = content_file.read()
-    msg.add_attachment(content, maintype='application', subtype='pdf', filename='FENS_Weekly.pdf')
+    msg.add_attachment(content, maintype='application', subtype='pdf', filename="FENS_"+date+".pdf")
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
 s.login(os.environ.get('EMAIL'),os.environ.get('LOGIN_KEY')) #Add your credentials
