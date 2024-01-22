@@ -1,12 +1,12 @@
 name: run main.py
 
-on:
-  workflow_dispatch:
-
 # on:
-#   # push:      # run @ every push
-#   schedule:
-#     - cron: '0 9 * * *' 
+#   workflow_dispatch:
+
+on:
+  # push:      # run @ every push
+  schedule:
+    - cron: '0 11 * * 1' 
 
 jobs:
   build:
