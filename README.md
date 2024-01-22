@@ -1,13 +1,6 @@
 # FENS-scrappers
 
-<b> Last job alert created at: 2024-01-22 14:54:25 </b>
-
-🔨 I am currently ..
-```yaml
-1. Data visualisation of "keywords" related to job-postings (e.g., WordCloud)
-2. Unique jobs posting found (e.g., country-wise, institute-wise)
-3. Prevent overlap of job-postings in subsequent "job-alerts" mails 
-```
+<b> Last job alert created at: 2024-01-22 16:43:20 </b>
 
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
@@ -21,8 +14,3 @@ We've supercharged this repository with GitHub Actions, making it a breeze to st
 
 📧 Sign Up, Sit Back, and Succeed
 All you need to do is sign up to receive our weekly job updates through Google Groups. The rest is pure magic, as our repository takes care of the rest. Stay ahead of the job market with minimal effort. Reach out on ihiteshpradhan@gmail.com for more information.
-
-<h3 align = "center">Preview of FENS Jobs Alert (PDF)</h3>
-<p align="center">
-    <img style="border:1px solid black;" src="FENS_AlertPreview.png" width="650" height="500" alt="FENS_Preview">
-</p>
