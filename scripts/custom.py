@@ -52,7 +52,7 @@ def update_data():
     return
 
 def get_metadata(pdf,format_time,tag_time):    
-    file_name = "FENS" + tag_time + ".txt"
+    file_name = "FENS_" + tag_time + ".txt"
 
     with open(file_name,'wt') as f :
 
