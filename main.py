@@ -81,7 +81,7 @@ def _get_metadata(pdf,format_time,tag_time):
 
             print(f"{format_time} JOBS FETCHED!")
 
-            for k in range(2):
+            for k in range(len(job_links)):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                     url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
                     print(url_job,file=f)
