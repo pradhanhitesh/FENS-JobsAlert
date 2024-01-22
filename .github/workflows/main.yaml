@@ -31,6 +31,7 @@ jobs:
           pip install pytz
           pip install glob2
           pip install shutils
+          pip install Jinja2
 
       - name: execute py script # run main.py
         env:
