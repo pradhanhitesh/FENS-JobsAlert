@@ -24,7 +24,7 @@ def _create_pdf(current_time):
 
     # set style and size of font
     # that you want in the pdf
-    pdf.add_font('DejaVu', '', '/Kaggle/FENS-scrappers/fonts/Tinos-Regular.ttf', uni=True)
+    pdf.add_font('DejaVu', '', 'fonts/Tinos-Regular.ttf', uni=True)
     pdf.set_font('DejaVu', '', 14)
 
     #Setting credentials
@@ -40,11 +40,11 @@ def _create_pdf(current_time):
     return pdf
 
 def _move_fens():
-    fens_files = glob.glob('/Kaggle/FENS-scrappers/FENS*')
+    fens_files = glob.glob('./FENS*')
     if len(fens_files) > 0:
         # print("FILES FOUND")
         for i in range(len(fens_files)):
-            shutil.move(fens_files[i],'/Kaggle/FENS-scrappers/data/')
+            shutil.move(fens_files[i],'./data/')
 
     return None
 
