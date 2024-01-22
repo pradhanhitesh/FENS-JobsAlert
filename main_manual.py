@@ -15,7 +15,7 @@ import os
 def _fetch_time():
     current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
     format_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
-    tag_time = str(current_time.day) + str(current_time.month) + str(current_time.year) + str(current_time.hour) + str(current_time.minute)
+    tag_time = str(current_time.day) + str(current_time.month) + str(current_time.year) + str(current_time.hour) + str(current_time.minute) + str(current_time.second)
     
     return current_time, format_time, tag_time
 
