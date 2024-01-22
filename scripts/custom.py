@@ -149,3 +149,10 @@ def send_mail(format_time,tag_time):
     s.send_message(msg)
 
     return
+
+def generate_html(format_time):
+    template_vars = {
+        'format_time' : format_time
+    }
+
+    return template_vars
