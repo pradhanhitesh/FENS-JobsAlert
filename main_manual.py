@@ -49,9 +49,6 @@ def _move_fens():
     return None
 
 def _get_metadata(file_name):
-    current_time = _fetch_time()
-    pdf = _create_pdf(current_time)
-    
     with open(file_name,'wt') as f :
 
         urls=["https://www.fens.org/careers/job-market"]
@@ -129,7 +126,8 @@ def _get_metadata(file_name):
                                         pdf.multi_cell(w=190, h=5, txt=text, border=0, align='L', fill=False)
                                         pdf.ln(h=5)
 
-
+current_time = _fetch_time()
+pdf = _create_pdf(current_time)
 date = str(current_time[0].day) + str(current_time[0].month) + str(current_time[0].year) + str(current_time[0].hour) + str(current_time[0].minute)
 
 #Filename
