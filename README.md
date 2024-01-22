@@ -2,6 +2,12 @@
 
 <b> Last job alert created at: 2024-01-22 14:54:25 </b>
 
+🔨 I am currently ..
+```yaml
+1. Data visualisation of "keywords" related to job-postings (e.g., WordCloud)
+2. Unique jobs posting found (e.g., country-wise, institute-wise)
+```
+
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
 Looking to kickstart your dream career in the field of neuroscience and beyond? Look no further! Our GitHub repository is your golden ticket to landing that perfect job. We've harnessed the power of web scraping and automation to bring you the FENS PhD Jobs Market like never before.
