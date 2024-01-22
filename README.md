@@ -20,3 +20,8 @@ We've supercharged this repository with GitHub Actions, making it a breeze to st
 
 📧 Sign Up, Sit Back, and Succeed
 All you need to do is sign up to receive our weekly job updates through Google Groups. The rest is pure magic, as our repository takes care of the rest. Stay ahead of the job market with minimal effort. Reach out on ihiteshpradhan@gmail.com for more information.
+
+<h3 align = "center">Preview of FENS Jobs Alert (PDF)</h3>
+<p align="center">
+    <img style="border:1px solid black;" src="FENS_AlertPreview.png" width="650" height="500" alt="FENS_Preview">
+</p>
