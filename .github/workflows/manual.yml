@@ -30,6 +30,8 @@ jobs:
         env:
           EMAIL: ${{ secrets.EMAIL }}
           LOGIN_KEY: ${{ secrets.LOGIN_KEY }}
+          FROM_ID: ${{ secrets.FROM_ID }}
+          TO_ID: ${{ secrets.TO_ID}}
         run: python main_manual.py
 
       - name: commit files

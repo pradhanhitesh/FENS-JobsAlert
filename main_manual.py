@@ -10,13 +10,16 @@ import yake
 import pytz
 import glob
 import shutil
+import os
 
 def _fetch_time():
     current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
     format_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
-    return current_time, format_time
+    tag_time = str(current_time.day) + str(current_time.month) + str(current_time.year) + str(current_time.hour) + str(current_time.minute)
+    
+    return current_time, format_time, tag_time
 
-def _create_pdf(current_time):
+def _create_pdf(format_time):
     #Convert txt to PDF
     pdf = FPDF()
     # Add a page
@@ -30,7 +33,7 @@ def _create_pdf(current_time):
     #Setting credentials
     pdf.set_text_color(0,0,0)  
     txt_1="FENS Job Market Weekly Feed"
-    txt_2="Last updated on: "+str(current_time[1])+" IST"
+    txt_2="Last updated on: "+str(format_time)+" IST"
     txt_3="github.com/pradhanhitesh"
     pdf.cell(200, 10, txt = txt_1,ln = 1, align = 'C')
     pdf.cell(200, 10, txt = txt_2,ln = 2, align = 'C')
@@ -48,7 +51,9 @@ def _move_fens():
 
     return None
 
-def _get_metadata(file_name):
+def _get_metadata(pdf,format_time,tag_time):    
+    file_name = "FENS" + tag_time + ".txt"
+
     with open(file_name,'wt') as f :
 
         urls=["https://www.fens.org/careers/job-market"]
@@ -56,7 +61,7 @@ def _get_metadata(file_name):
             # Send a request to the URL
             response = requests.get(url)
             response.raise_for_status()
-            print(f"{_fetch_time()[1]} REQUEST SENT!")
+            print(f"{format_time} REQUEST SENT!")
 
             # Parse the content using BeautifulSoup
             soup = BeautifulSoup(response.content, 'html.parser')
@@ -74,7 +79,7 @@ def _get_metadata(file_name):
                     # print(fullstring)
                     job_links.append(fullstring)
 
-            print(f"{_fetch_time()[1]} JOBS FETCHED!")
+            print(f"{format_time} JOBS FETCHED!")
 
             for k in range(2):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
@@ -125,27 +130,24 @@ def _get_metadata(file_name):
                                         print(text)
                                         pdf.multi_cell(w=190, h=5, txt=text, border=0, align='L', fill=False)
                                         pdf.ln(h=5)
+    
+    return pdf.output("FENS_"+tag_time+".pdf")
 
-current_time = _fetch_time()
-pdf = _create_pdf(current_time)
-date = str(current_time[0].day) + str(current_time[0].month) + str(current_time[0].year) + str(current_time[0].hour) + str(current_time[0].minute)
-
-#Filename
-file_name="FENS"+"_"+date +".txt"
+_ , format_time, tag_time = _fetch_time()
+pdf = _create_pdf(format_time)
 
 _move_fens()         
-_get_metadata(file_name)
-pdf.output("FENS_"+date+".pdf")
+_get_metadata(pdf,format_time,tag_time)
 
 msg = EmailMessage()
 msg["From"] = os.environ.get('FROM_ID')
 msg["Subject"] = "FENS Weekly Update" 
 msg["To"] = os.environ.get('TO_ID')
-msg.set_content(f"Dear subscriber, \nPlease find attached the FENS Weekly Update. \nGenerated on {current_time[1]} IST. \n\nRegards,\nHitesh Pradhan")
+msg.set_content(f"Dear subscriber, \nPlease find attached the FENS Weekly Update. \nGenerated on {format_time} IST. \n\nRegards,\nHitesh Pradhan")
 
-with open("FENS_"+date+".pdf", 'rb') as content_file:
+with open("FENS_"+ tag_time +".pdf", 'rb') as content_file:
     content = content_file.read()
-    msg.add_attachment(content, maintype='application', subtype='pdf', filename="FENS_"+date+".pdf")
+    msg.add_attachment(content, maintype='application', subtype='pdf', filename="FENS_"+ tag_time +".pdf")
 
 s = smtplib.SMTP_SSL('smtp.gmail.com')
 s.login(os.environ.get('EMAIL'),os.environ.get('LOGIN_KEY')) #Add your credentials
