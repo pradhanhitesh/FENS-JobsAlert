@@ -6,6 +6,7 @@
 ```yaml
 1. Data visualisation of "keywords" related to job-postings (e.g., WordCloud)
 2. Unique jobs posting found (e.g., country-wise, institute-wise)
+3. Prevent overlap of job-postings in subsequent "job-alerts" mails 
 ```
 
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
