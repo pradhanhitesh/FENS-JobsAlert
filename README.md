@@ -1,6 +1,6 @@
 # FENS-scrappers
 
-<b> Last job alert created at: 2024-01-22 14:39:42 </b>
+<b> Last job alert created at: 2024-01-22 14:54:25 </b>
 
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
