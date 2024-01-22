@@ -23,8 +23,8 @@ jobs:
           pip install yake
           pip install python-docx
           pip install pytz
-          pip install glob
-          pip install shutil
+          pip install glob2
+          pip install shutils
           
       - name: execute py script # run main.py
         env:
