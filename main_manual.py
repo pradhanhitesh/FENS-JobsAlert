@@ -24,7 +24,7 @@ def _create_pdf(current_time):
 
     # set style and size of font
     # that you want in the pdf
-    pdf.add_font('DejaVu', '', 'fonts/Tinos-Regular.ttf', uni=True)
+    pdf.add_font('DejaVu', '', './fonts/Tinos-Regular.ttf', uni=True)
     pdf.set_font('DejaVu', '', 14)
 
     #Setting credentials
