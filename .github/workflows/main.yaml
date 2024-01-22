@@ -3,6 +3,11 @@ name: run main.py
 on:
   workflow_dispatch:
 
+# on:
+#   # push:      # run @ every push
+#   schedule:
+#     - cron: '0 9 * * *' 
+
 jobs:
   build:
     runs-on: ubuntu-latest
