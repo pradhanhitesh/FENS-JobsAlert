@@ -7,7 +7,7 @@ def main():
 
     custom.update_data()         
     custom.get_metadata(pdf,format_time,tag_time)
-    custom.send_mail(format_time,tag_time)
+    # custom.send_mail(format_time,tag_time)
 
     template_vars = custom.generate_html(format_time)
     env = Environment(loader=FileSystemLoader("template"))
