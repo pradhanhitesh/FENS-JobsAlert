@@ -139,16 +139,16 @@ pdf = _create_pdf(format_time)
 _move_fens()         
 _get_metadata(pdf,format_time,tag_time)
 
-# msg = EmailMessage()
-# msg["From"] = os.environ.get('FROM_ID')
-# msg["Subject"] = "FENS Weekly Update" 
-# msg["To"] = os.environ.get('TO_ID')
-# msg.set_content(f"Dear subscriber, \nPlease find attached the FENS Weekly Update. \nGenerated on {format_time} IST. \n\nRegards,\nHitesh Pradhan")
+msg = EmailMessage()
+msg["From"] = os.environ.get('FROM_ID')
+msg["Subject"] = "FENS Weekly Update" 
+msg["To"] = os.environ.get('TO_ID')
+msg.set_content(f"Dear subscriber, \nPlease find attached the FENS Weekly Update. \nGenerated on {format_time} IST. \n\nRegards,\nHitesh Pradhan")
 
-# with open("FENS_"+ tag_time +".pdf", 'rb') as content_file:
-#     content = content_file.read()
-#     msg.add_attachment(content, maintype='application', subtype='pdf', filename="FENS_"+ tag_time +".pdf")
+with open("FENS_"+ tag_time +".pdf", 'rb') as content_file:
+    content = content_file.read()
+    msg.add_attachment(content, maintype='application', subtype='pdf', filename="FENS_"+ tag_time +".pdf")
 
-# s = smtplib.SMTP_SSL('smtp.gmail.com')
-# s.login(os.environ.get('EMAIL'),os.environ.get('LOGIN_KEY')) #Add your credentials
-# s.send_message(msg)
+s = smtplib.SMTP_SSL('smtp.gmail.com')
+s.login(os.environ.get('EMAIL'),os.environ.get('LOGIN_KEY')) #Add your credentials
+s.send_message(msg)
