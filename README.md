@@ -1,6 +1,6 @@
-﻿# FENS-scrappers
+# FENS-scrappers
 
-<b> About the repository (Generated via ChatGPT) </b>
+<b> Last job alert created at: 2024-01-22 14:39:42 </b>
 
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
