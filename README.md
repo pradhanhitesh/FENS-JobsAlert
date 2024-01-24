@@ -1,6 +1,15 @@
-# FENS-scrappers
+# FENS-Job Alert
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/pradhitesh?style=social)](https://twitter.com/intent/follow?screen_name=pradhitesh)
+[![LinkedIn Badge](https://img.shields.io/badge/-LinkedIn-blue?style=social&logo=Linkedin&logoColor=blue&link=https://www.linkedin.com/in/pradhanhitesh/)](https://www.linkedin.com/in/pradhanhitesh/)
+[![Gmail Badge](https://img.shields.io/badge/-ihiteshpradhan@gmail.com-c14438?style=social&logo=Gmail&logoColor=red&link=mailto:ihiteshpradhan@gmail.com)](mailto:ihiteshpradhan@gmail.com)
 
 <b> Last job alert created at: 2024-01-22 16:43:20 </b>
+
+🔨 I am currently ..
+```yaml
+1. Developing job-posting visualization tool 
+```
 
 🌟 Introducing the Ultimate Career Companion: FENS PhD Jobs Market Scraper 🌟
 
