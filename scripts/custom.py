@@ -54,7 +54,12 @@ def update_data():
     if len(fens_files) > 0:
         # print("FILES FOUND")
         for i in range(len(fens_files)):
-            shutil.move(fens_files[i],'./data/')
+            shutil.move(fens_files[i],'./data/metadata/')
+    img_files = glob.glob('./CountryCount*')
+    if len(img_files) > 0:
+        # print("FILES FOUND")
+        for i in range(len(img_files)):
+            shutil.move(img_files[i],'./data/images/')
 
     return
 
