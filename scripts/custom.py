@@ -92,7 +92,7 @@ def get_metadata(pdf,format_time,tag_time):
 
             print(f"{format_time} JOBS FETCHED!")
 
-            for k in range(10):
+            for k in range(len(job_links)):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                     url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
                     print(url_job,file=f)
@@ -204,13 +204,15 @@ def count_countries():
 
     return store_count
 
-def generate_plot(count_dict,tag_time):
+def generate_plot(count_dict,tag_time,format_time):
     plt.figure(figsize=(12,5))
     plt.xticks(range(len(count_dict)), list(count_dict.keys()), rotation=45)
 
     ax = sns.barplot(x = list(count_dict.keys()), 
                      y = list(count_dict.values()))
     ax.bar_label(ax.containers[0])
+    txt = "Last updated on: " + str(format_time) + " IST"
+    plt.text(5.1, 8, txt, fontsize = 13)
 
     plt.savefig('CountryCount_' + tag_time +'.png',bbox_inches='tight')
     plt.close()
