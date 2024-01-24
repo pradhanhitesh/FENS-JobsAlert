@@ -6,7 +6,8 @@ def main():
     pdf = custom.create_pdf(format_time)
 
     custom.update_data()         
-    custom.get_metadata(pdf,format_time,tag_time)
+    data_dict = custom.get_metadata(pdf,format_time,tag_time)
+    custom.update_data_json(data_dict)
     custom.send_mail(format_time,tag_time)
 
     template_vars = custom.generate_html(format_time)
