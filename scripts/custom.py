@@ -208,7 +208,8 @@ def generate_plot(count_dict,tag_time):
     plt.figure(figsize=(12,5))
     plt.xticks(range(len(count_dict)), list(count_dict.keys()), rotation=45)
 
-    ax = sns.barplot(list(count_dict.keys()),list(count_dict.values()))
+    ax = sns.barplot(x = list(count_dict.keys()), 
+                     y = list(count_dict.values()))
     ax.bar_label(ax.containers[0])
 
     plt.savefig('CountryCount' + tag_time +'.png',bbox_inches='tight')
