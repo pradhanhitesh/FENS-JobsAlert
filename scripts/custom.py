@@ -222,7 +222,7 @@ def generate_html_plot(format_time):
     png_files = [file for file in all_files if file.endswith('.png')]
 
     template_vars = {
-        'plot' : f'<img src="{png_files[0]}" width="650" height="400">',
+        'plot' : f'<img src="{png_files[0]}" width="750" height="400">',
         'timestamp' : format_time
         }
     
