@@ -12,7 +12,6 @@ import smtplib
 from email.message import EmailMessage
 import json
 
-
 def fetch_time():
     current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
     format_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
@@ -43,6 +42,11 @@ def create_pdf(format_time):
 
     return pdf
 
+def add_element(dict, key, value):
+    if key not in dict:
+        dict[key] = []
+    dict[key].append(value)
+
 def update_data():
     fens_files = glob.glob('./FENS*')
     if len(fens_files) > 0:
@@ -55,6 +59,10 @@ def update_data():
 def get_metadata(pdf,format_time,tag_time):    
     file_name = "FENS_" + tag_time + ".txt"
 
+    # Gather metadata for job-links
+    data_dict = {}
+    add_element(data_dict,'Timestamp',format_time)
+    
     with open(file_name,'wt') as f :
         urls=["https://www.fens.org/careers/job-market"]
         for url in urls:
@@ -82,8 +90,7 @@ def get_metadata(pdf,format_time,tag_time):
 
             print(f"{format_time} JOBS FETCHED!")
 
-            # Gather metadata for job-links
-            for k in range(len(job_links)):
+            for k in range(10):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                     url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
                     print(url_job,file=f)
@@ -110,13 +117,18 @@ def get_metadata(pdf,format_time,tag_time):
                     keywords=['<p>Job ID:','<p><b>Position:','<p><b>Deadline:',
                             '<p><b>Employment Start Date:','<p><b>Country:','<p><b>Institution:','URL:',
                             "<p><b>Department:"]
-
+                    
+                    local = []
                     for j in range(len(list(soup.find_all('p')))):
                         for keys in keywords:
                             if str(soup.find_all('p')[j]).find(keys) != -1:
                                 print(re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
+                                local.append(re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
                                 pdf.write(4,re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
                                 pdf.ln(h=5)
+
+                    add_element(data_dict,'JobID',list(filter(lambda x: x.startswith('Job ID'), local))[0].split(': ')[1])
+                    add_element(data_dict,'Country',list(filter(lambda x: x.startswith('Country'), local))[0].split(': ')[1])
 
                     # Generate keywords for each job-links from descirption
                     save_des=["<p><b>Description:"]
@@ -134,8 +146,9 @@ def get_metadata(pdf,format_time,tag_time):
                                         print(text)
                                         pdf.multi_cell(w=190, h=5, txt=text, border=0, align='L', fill=False)
                                         pdf.ln(h=5)
-    
-    return pdf.output("FENS_"+tag_time+".pdf")
+    pdf.output("FENS_"+tag_time+".pdf")
+
+    return data_dict
 
 def send_mail(format_time,tag_time):
     msg = EmailMessage()
