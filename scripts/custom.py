@@ -55,7 +55,6 @@ def get_metadata(pdf,format_time,tag_time):
     file_name = "FENS_" + tag_time + ".txt"
 
     with open(file_name,'wt') as f :
-
         urls=["https://www.fens.org/careers/job-market"]
         for url in urls:
             # Send a request to the URL
@@ -67,6 +66,7 @@ def get_metadata(pdf,format_time,tag_time):
             soup = BeautifulSoup(response.content, 'html.parser')
             href_tags = soup.find_all(href=True)
 
+            # Fetch job-links
             job_links=[]
             for i in range(len(href_tags)):
                 fullstring = str(href_tags[i])
@@ -81,6 +81,7 @@ def get_metadata(pdf,format_time,tag_time):
 
             print(f"{format_time} JOBS FETCHED!")
 
+            # Gather metadata for job-links
             for k in range(len(job_links)):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                     url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
@@ -96,7 +97,7 @@ def get_metadata(pdf,format_time,tag_time):
                     # Parse the content using BeautifulSoup
                     soup = BeautifulSoup(response.content, 'html.parser')
 
-                    #Get title
+                    # Get title
                     title_tags = soup.find_all('title')
                     title=str(title_tags).split('>')[1].split('<')[0]
                     print("Title: ",title)
@@ -104,6 +105,7 @@ def get_metadata(pdf,format_time,tag_time):
                     title_text="Title: "+str(title_tags).split('>')[1].split('<')[0]
                     pdf.multi_cell(w=190, h=5, txt=title_text, border=0, align='L', fill=False)
 
+                    # Get other info
                     keywords=['<p>Job ID:','<p><b>Position:','<p><b>Deadline:',
                             '<p><b>Employment Start Date:','<p><b>Country:','<p><b>Institution:','URL:',
                             "<p><b>Department:"]
@@ -115,6 +117,7 @@ def get_metadata(pdf,format_time,tag_time):
                                 pdf.write(4,re.sub('<[^<]+?>', '',str(soup.find_all('p')[j])))
                                 pdf.ln(h=5)
 
+                    # Generate keywords for each job-links from descirption
                     save_des=["<p><b>Description:"]
                     for j in range(len(list(soup.find_all('p')))):
                         for keys in save_des:
