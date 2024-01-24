@@ -11,6 +11,8 @@ import shutil
 import smtplib
 from email.message import EmailMessage
 import json
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 def fetch_time():
     current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
@@ -90,7 +92,7 @@ def get_metadata(pdf,format_time,tag_time):
 
             print(f"{format_time} JOBS FETCHED!")
 
-            for k in range(len(job_links)):
+            for k in range(10):
                 if re.sub('<[^<]+?>', '', str(job_links[k])).isdigit():
                     url_job="https://www.fens.org/careers/job-market/job/" + re.sub('<[^<]+?>', '', str(job_links[k])) + "/"
                     print(url_job,file=f)
@@ -179,10 +181,48 @@ def update_data_json(data_dict):
                   separators=(',',': '))
     return
 
+def count_countries():
+    def count_frequency(input_list):
+        frequency_dict = {}
 
-def generate_html(format_time):
+        for element in input_list:
+            if element in frequency_dict:
+                frequency_dict[element] += 1
+            else:
+                frequency_dict[element] = 1
+
+        return frequency_dict
+
+    with open("data/data.json") as doc:
+        docObj = json.load(doc)
+
+    countries = []
+    for i in range(len(docObj)):
+        countries = countries + docObj[i]['Country']
+
+    store_count = count_frequency(countries)
+
+    return store_count
+
+def generate_plot(count_dict,tag_time):
+    plt.figure(figsize=(12,5))
+    plt.xticks(range(len(count_dict)), list(count_dict.keys()), rotation=45)
+
+    ax = sns.barplot(list(count_dict.keys()),list(count_dict.values()))
+    ax.bar_label(ax.containers[0])
+
+    plt.savefig('CountryCount' + tag_time +'.png',bbox_inches='tight')
+    plt.close()
+
+    return
+
+def generate_html_plot(format_time):
+    all_files = os.listdir("./")
+    png_files = [file for file in all_files if file.endswith('.png')]
+
     template_vars = {
-        'format_time' : format_time
-    }
-
+        'plot' : f'<img src="{png_files[0]}" width="650" height="400">',
+        'timestamp' : format_time
+        }
+    
     return template_vars
