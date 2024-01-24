@@ -212,7 +212,7 @@ def generate_plot(count_dict,tag_time,format_time):
                      y = list(count_dict.values()))
     ax.bar_label(ax.containers[0])
     txt = "Last updated on: " + str(format_time) + " IST"
-    plt.text(5.1, 8, txt, fontsize = 13)
+    plt.text(len(count_dict.keys())/2, max(count_dict.values()), txt, fontsize = 13)
 
     plt.savefig('CountryCount_' + tag_time +'.png',bbox_inches='tight')
     plt.close()
