@@ -212,7 +212,7 @@ def generate_plot(count_dict,tag_time):
                      y = list(count_dict.values()))
     ax.bar_label(ax.containers[0])
 
-    plt.savefig('CountryCount' + tag_time +'.png',bbox_inches='tight')
+    plt.savefig('CountryCount_' + tag_time +'.png',bbox_inches='tight')
     plt.close()
 
     return
