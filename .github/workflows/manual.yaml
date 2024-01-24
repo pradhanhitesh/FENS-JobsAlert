@@ -32,7 +32,7 @@ jobs:
           pip install glob2
           pip install shutils
           pip install Jinja2
-          pip install jsonlib
+
 
       - name: execute py script # run main.py
         env:
