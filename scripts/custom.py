@@ -153,6 +153,19 @@ def send_mail(format_time,tag_time):
 
     return
 
+def update_data_json(data_dict):
+    with open("data/data.json") as doc:
+        docObj = json.load(doc)
+        docObj.append(
+            data_dict
+        )
+    with open("data/data.json", 'w') as json_file:
+        json.dump(docObj, json_file, 
+                  indent=4,  
+                  separators=(',',': '))
+    return
+
+
 def generate_html(format_time):
     template_vars = {
         'format_time' : format_time
