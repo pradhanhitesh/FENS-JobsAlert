@@ -201,11 +201,18 @@ def count_countries():
     with open("data/data.json") as doc:
         docObj = json.load(doc)
 
-    countries = []
-    for i in range(len(docObj)):
-        countries = countries + docObj[i]['Country']
+    unique_id = []
+    unique_countries =[]
 
-    store_count = count_frequency(countries)
+    for k in range(len(docObj)):
+        fetch_ids =  docObj[k]['JobID']
+        for idx, job_ids in enumerate(fetch_ids):
+            if job_ids not in unique_id:
+                unique_id.append(docObj[k]['JobID'][idx])
+                unique_countries.append(docObj[k]['Country'][idx])
+
+
+    store_count = count_frequency(unique_countries)
 
     return store_count
 
