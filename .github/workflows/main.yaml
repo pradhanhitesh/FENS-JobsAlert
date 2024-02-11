@@ -6,7 +6,7 @@ name: run main.py
 on:
   # push:      # run @ every push
   schedule:
-    - cron: '43 4 * * 2,4,6' 
+    - cron: '43 4 * * 1' 
 
 jobs:
   build:
