@@ -4,7 +4,7 @@
 [![LinkedIn Badge](https://img.shields.io/badge/-LinkedIn-blue?style=social&logo=Linkedin&logoColor=blue&link=https://www.linkedin.com/in/pradhanhitesh/)](https://www.linkedin.com/in/pradhanhitesh/)
 [![Gmail Badge](https://img.shields.io/badge/-ihiteshpradhan@gmail.com-c14438?style=social&logo=Gmail&logoColor=red&link=mailto:ihiteshpradhan@gmail.com)](mailto:ihiteshpradhan@gmail.com)
 
-<b> Last job alert created at: 2024-10-14 10:18:05 IST </b>
+<b> Last job alert created at: 2024-10-21 10:17:33 IST </b>
 
 🔨 I am currently ..
 ```yaml
@@ -26,7 +26,7 @@ All you need to do is sign up to receive our weekly job updates through Google G
 
 <h1 align = "center">Country-wise Job Alerts</h1>
 <p align="center">
-    <img src="CountryCount_1410202410185.png" width="750" height="400">
+    <img src="CountryCount_21102024101733.png" width="750" height="400">
 </p>
 
 <h1 align = "center">FENS Job-Alert Preview (PDF)</h1>

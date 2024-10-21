@@ -831,5 +831,54 @@
             "Italy",
             "Germany"
         ]
+    },
+    {
+        "Timestamp": [
+            "2024-10-21 10:17:33"
+        ],
+        "JobID": [
+            "120652",
+            "120651",
+            "120647",
+            "120634",
+            "120631",
+            "120628",
+            "120625",
+            "120623",
+            "120622",
+            "120611",
+            "120608",
+            "120601",
+            "120566",
+            "120555",
+            "120553",
+            "120547",
+            "120536",
+            "120534",
+            "120532",
+            "120529"
+        ],
+        "Country": [
+            "France",
+            "France",
+            "Sweden",
+            "Germany",
+            "Germany",
+            "Germany",
+            "United States",
+            "France",
+            "Poland",
+            "Austria",
+            "Austria",
+            "Germany",
+            "Canada",
+            "Germany",
+            "France",
+            "United States",
+            "Italy",
+            "United Kingdom",
+            "Spain",
+            "Germany"
+        ]
     }
 ]
