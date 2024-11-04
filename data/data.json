@@ -929,5 +929,54 @@
             "Austria",
             "Austria"
         ]
+    },
+    {
+        "Timestamp": [
+            "2024-11-04 10:17:44"
+        ],
+        "JobID": [
+            "120722",
+            "120719",
+            "120718",
+            "120717",
+            "120715",
+            "120714",
+            "120691",
+            "120690",
+            "120685",
+            "120678",
+            "120677",
+            "120676",
+            "120672",
+            "120662",
+            "120659",
+            "120652",
+            "120651",
+            "120647",
+            "120634",
+            "120631"
+        ],
+        "Country": [
+            "Switzerland",
+            "Germany",
+            "United Kingdom",
+            "France",
+            "Germany",
+            "United Kingdom",
+            "Germany",
+            "Poland",
+            "United Kingdom",
+            "Belgium",
+            "Switzerland",
+            "Switzerland",
+            "Finland",
+            "Austria",
+            "Netherlands",
+            "France",
+            "France",
+            "Sweden",
+            "Germany",
+            "Germany"
+        ]
     }
 ]
