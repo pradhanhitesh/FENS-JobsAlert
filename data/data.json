@@ -1125,5 +1125,54 @@
             "France",
             "Italy"
         ]
+    },
+    {
+        "Timestamp": [
+            "2024-12-02 10:19:55"
+        ],
+        "JobID": [
+            "121343",
+            "121342",
+            "121336",
+            "121334",
+            "121332",
+            "121330",
+            "121319",
+            "121311",
+            "121310",
+            "121296",
+            "121291",
+            "121290",
+            "121288",
+            "121281",
+            "121262",
+            "121252",
+            "121250",
+            "120785",
+            "120784",
+            "120783"
+        ],
+        "Country": [
+            "Switzerland",
+            "Switzerland",
+            "Germany",
+            "Germany",
+            "Germany",
+            "France",
+            "Israel",
+            "Canada",
+            "Germany",
+            "Germany",
+            "UK",
+            "Germany",
+            "United Kingdom",
+            "Switzerland",
+            "United Kingdom",
+            "Sweden",
+            "Sweden",
+            "Italy",
+            "Germany",
+            "United Kingdom"
+        ]
     }
 ]
