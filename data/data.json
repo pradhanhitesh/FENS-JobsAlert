@@ -1272,5 +1272,54 @@
             "Sweden",
             "Serbia"
         ]
+    },
+    {
+        "Timestamp": [
+            "2024-12-23 10:17:24"
+        ],
+        "JobID": [
+            "121535",
+            "121534",
+            "121533",
+            "121528",
+            "121527",
+            "121526",
+            "121524",
+            "121523",
+            "121520",
+            "121519",
+            "121516",
+            "121544",
+            "121515",
+            "121511",
+            "121510",
+            "121509",
+            "121498",
+            "121494",
+            "121493",
+            "121492"
+        ],
+        "Country": [
+            "Germany",
+            "Israel",
+            "Israel",
+            "Germany",
+            "Germany",
+            "Germany",
+            "Italy",
+            "Italy",
+            "United States",
+            "Germany",
+            "France",
+            "Belgium",
+            "United Kingdom",
+            "United Kingdom",
+            "Germany",
+            "Germany",
+            "United States",
+            "Germany",
+            "Ireland",
+            "Italy"
+        ]
     }
 ]
